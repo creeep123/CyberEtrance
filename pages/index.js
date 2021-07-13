@@ -3,10 +3,13 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
       </Head>
+      <div className={styles.header}>
+        <main className={styles.cyberTitle}>LINE</main>
+      </div>
     </div>
   );
 }
