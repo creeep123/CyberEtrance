@@ -1,15 +1,30 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { ChakraProvider } from '@chakra-ui/react';
+import Card from '../components/card';
 
 export default function Home() {
   return (
-    <div>
+    <ChakraProvider>
       <Head>
-        <title>Create Next App</title>
+        <title>Cyber Entrance</title>
       </Head>
-      <div className={styles.header}>
-        <main className={styles.cyberTitle}>LINE</main>
-      </div>
-    </div>
+      <main className={styles.content}>
+        <header className={styles.header}>
+          <div className={styles.cyberTitle}>Cyber Entrance</div>
+        </header>
+        <div className={styles.cardContainer}>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+          <Card></Card>
+        </div>
+      </main>
+    </ChakraProvider>
   );
 }
