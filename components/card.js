@@ -9,14 +9,22 @@ import {
   Icon,
 } from '@chakra-ui/react';
 import { FaGithub, FaBattleNet } from 'react-icons/fa';
+import iconDict from './iconDict.js';
 
 // const IMAGE =
 // 'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
 
 export default function Card(props) {
   const { projectInfo } = props;
-  const { IMAGE, NAME, github, address, type } = projectInfo;
-  const getTechStackIcons = (id) => {};
+  const { IMAGE, NAME, github, address, type, techStack } = projectInfo;
+  const getTechStackIcons = (techStack) => {
+    // 把 techStack 从字符串数组变成一个装有【icon组件】的数组
+    return techStack.map((tech) => {
+      if (iconDict[tech] != undefined) {
+        return <Icon boxSize={'1.5em'} as={iconDict[tech]} />;
+      }
+    });
+  };
 
   return (
     <Center py={12}>
@@ -83,6 +91,7 @@ export default function Card(props) {
             <a href={address}>
               <Icon focusable={true} boxSize={'1.5em'} as={FaBattleNet} />
             </a>
+            {getTechStackIcons(techStack)}
           </Stack>
         </Stack>
       </Box>

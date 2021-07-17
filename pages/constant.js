@@ -5,7 +5,7 @@ const projects = [
     type: 'personal site',
     address: 'https://blog.yangdexiong.cn/',
     github: 'https://github.com/creeep123/creeep123.github.io',
-    techStack: [''],
+    techStack: [],
     IMAGE:
       'https://gitee.com/yxon123/gitee-sources/raw/master//Images/blog.jpg',
   },
@@ -15,7 +15,7 @@ const projects = [
     type: 'tool',
     address: 'https://eat-what-app.vercel.app/',
     github: 'https://github.com/creeep123/eat-what-app',
-    techStack: ['svelte'],
+    techStack: ['svelte', 'vercel'],
     IMAGE:
       'https://gitee.com/yxon123/gitee-sources/raw/master//Images/eat-what-app.vercel.app.jpeg',
   },
@@ -25,7 +25,7 @@ const projects = [
     type: 'enterprise',
     address: 'https://eat-what-app.vercel.app/',
     github: 'https://github.com/creeep123/eat-what-app',
-    techStack: [''],
+    techStack: ['react', 'nodejs'],
     IMAGE:
       'https://gitee.com/yxon123/gitee-sources/raw/master//Images/image-20210714210012418.png',
   },
@@ -34,7 +34,7 @@ const projects = [
     NAME: 'Cyber Entrance',
     address: '/',
     github: 'https://github.com/creeep123/eat-what-app',
-    techStack: [''],
+    techStack: [],
     IMAGE:
       'https://gitee.com/yxon123/gitee-sources/raw/master//Images/image-20210714210012418.png',
   },
@@ -43,7 +43,7 @@ const projects = [
     NAME: 'iCrowd Task',
     address: 'https://eat-what-app.vercel.app/',
     github: 'https://github.com/creeep123/eat-what-app',
-    techStack: [''],
+    techStack: [],
     IMAGE:
       'https://gitee.com/yxon123/gitee-sources/raw/master//Images/image-20210714210012418.png',
   },
