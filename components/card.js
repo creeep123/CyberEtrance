@@ -26,7 +26,7 @@ export default function Card(props) {
   };
 
   return (
-    <Center py={12} key={id}>
+    <Center py={12}>
       <Box
         role={'group'}
         p={6}
