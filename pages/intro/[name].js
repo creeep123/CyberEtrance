@@ -2,11 +2,12 @@
 import utilStyles from '../../styles/utils.module.css';
 import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
-import { projects, findProject } from '../constant';
+import { findProject } from '../../components/constant';
 
 const Intro = () => {
   const router = useRouter();
   const { name } = router.query;
+  debugger;
   const project = findProject(name);
 
   return (
