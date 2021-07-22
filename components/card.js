@@ -8,18 +8,25 @@ import {
   Image,
   Icon,
 } from '@chakra-ui/react';
-import { FaGithub, FaBattleNet } from 'react-icons/fa';
-
-// const IMAGE =
-// 'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
+import { FaGithub } from 'react-icons/fa';
+import { GrView } from 'react-icons/gr';
+import iconDict from './iconDict.js';
+import Link from 'next/link';
 
 export default function Card(props) {
   const { projectInfo } = props;
-  const { IMAGE, NAME, github, address, type } = projectInfo;
-  const getTechStackIcons = (id) => {};
+  const { id, IMAGE, NAME, github, address, type, techStack } = projectInfo;
+  const getTechStackIcons = (techStack) => {
+    // 把 techStack 从字符串数组变成一个装有【icon组件】的数组
+    return techStack.map((tech) => {
+      if (iconDict[tech] != undefined) {
+        return <Icon boxSize={'1.5em'} as={iconDict[tech]} />;
+      }
+    });
+  };
 
   return (
-    <Center py={12}>
+    <Center py={12} key={id}>
       <Box
         role={'group'}
         p={6}
@@ -54,13 +61,15 @@ export default function Card(props) {
             },
           }}
         >
-          <Image
-            rounded={'lg'}
-            height={230}
-            width={282}
-            objectFit={'cover'}
-            src={IMAGE}
-          />
+          <Link href={`intro/${NAME}`}>
+            <Image
+              rounded={'lg'}
+              height={230}
+              width={282}
+              objectFit={'cover'}
+              src={IMAGE}
+            />
+          </Link>
         </Box>
         <Stack pt={10} align={'center'}>
           <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
@@ -76,13 +85,14 @@ export default function Card(props) {
             <Text textDecoration={'line-through'} color={'gray.600'}>
               $199
             </Text> */}
+            <a href={address}>
+              <Icon focusable={true} boxSize={'1.5em'} as={GrView} />
+            </a>
+            &npsb;
             <a href={github}>
               <Icon focusable={true} boxSize={'1.5em'} as={FaGithub} />
             </a>
-            &npsb;
-            <a href={address}>
-              <Icon focusable={true} boxSize={'1.5em'} as={FaBattleNet} />
-            </a>
+            {getTechStackIcons(techStack)}
           </Stack>
         </Stack>
       </Box>
